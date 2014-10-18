@@ -1,0 +1,21 @@
+* components
+** context
+  - defined by sysadmin
+  - digital ocean?
+    - ubuntu 14.04
+  - core includes:
+    - apt, make, gcc, ghc, python2.7, node, apache
+** root agent
+  - cron job for voting
+  - setuid cp proposal
+** client cli
+commands:
+ - VOTE
+   - edit a local 'votes' file
+     - checked ~5min?
+   - not strictly needed
+ - PROPOSE
+   - folder of text files to be zipped and voted on
+   - folder is verified, zipped, numbered, and placed in canonical location
+** user home
+** install script
