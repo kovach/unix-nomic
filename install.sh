@@ -67,7 +67,11 @@ try cp -r skel/* /etc/skel/
 run mkdir /etc/skel/www
 try chmod a+r /etc/skel/www
 
+
 header nginx
+
+run mkdir -m 755 /var/www
+try cp -r www/* /var/www
 
 cp nginx/nginxconf /etc/nginx/sites-available/nginxconf
 run rm /etc/nginx/sites-enabled/*
