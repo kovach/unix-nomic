@@ -1,6 +1,9 @@
-# Serve user www directories
-location ~ ^/~(.+?)(/.*?)$ {
-  alias /home/$1/www/$2;
-  index index.html index.htm;
-  autoindex on;
+server {
+  listen 80;
+  # Serve user www directories
+  location ~ ^/~(.+?)(/.*?)$ {
+    alias /home/$1/www$2;
+    index index.html index.htm;
+    autoindex on;
+  }
 }
