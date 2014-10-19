@@ -1,4 +1,4 @@
 #!/bin/sh
 
-printf "\nMaybe there are outstanding proposals.\n"
+printf "\nMaybe there are outstanding proposals.\n\n"
 

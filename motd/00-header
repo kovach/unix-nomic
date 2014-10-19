@@ -2,5 +2,5 @@
 
 . /etc/lsb-release
 
-printf "### Welcome to unix-nomic ###"
+printf "### Welcome to unix-nomic ###\n"
 printf "Running %s (%s %s %s)\n" "$DISTRIB_DESCRIPTION" "$(uname -o)" "$(uname -r)" "$(uname -m)"
