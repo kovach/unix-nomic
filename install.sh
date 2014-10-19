@@ -36,7 +36,6 @@ then
 fi
 
 header Core tools
-try apt-get update
 try apt-get --yes --force-yes install \
     build-essential \
     ghc \
@@ -50,8 +49,8 @@ try apt-get --yes --force-yes install \
 
 header Installing game software
 
-try mkdir -m 755 /nomic
-try mkdir -m 755 /nomic/proposals
+run mkdir -m 755 /nomic
+run mkdir -m 755 /nomic/proposals
 
 try cd proposal
 try make install
