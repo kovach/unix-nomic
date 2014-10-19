@@ -1,0 +1,19 @@
+* unix-nomic
+
+  This is the core functionality of a nomic which *is* a functioning
+  unix system.  Proposals are pieces of code which are to be run by
+  the root user.
+
+* Installation
+
+  The nomic is designed to be used on Ubuntu Server 14.04.1 LTS.
+
+  Once there is such a system running, the bootstrap.sh script should
+  be run by hand.
+
+  It may be necessary to disable ipv6. Add to sysctl.conf:
+    net.ipv6.conf.all.disable_ipv6 = 1
+    net.ipv6.conf.default.disable_ipv6 = 1
+    net.ipv6.conf.lo.disable_ipv6 = 1
+  Then run sudo sysctl -p or reboot
+
