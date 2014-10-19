@@ -52,7 +52,7 @@ header Installing game software
 run mkdir -m 755 /nomic
 run mkdir -m 755 /nomic/proposals
 
-try cd proposal
+try cd propose
 try make install
 try cd ..
 
