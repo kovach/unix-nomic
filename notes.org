@@ -1,3 +1,5 @@
+* design decisions
+  - allow pizzaface?
 * context
   - defined by sysadmin
   - digital ocean?
