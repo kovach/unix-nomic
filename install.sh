@@ -64,23 +64,12 @@ header Cron jobs
 header skel directory
 
 try cp -r skel/* /etc/skel/
-try mkdir /etc/skel/www
+run mkdir /etc/skel/www
 try chmod a+r /etc/skel/www
 
 header nginx
 
-cat > /etc/nginx/sites-available/nginxconfig <<EOF
-server {
-  listen 80;
-  # Serve user www directories
-  location ~ ^/~(.+?)(/.*?)$ {
-    alias /home/$1/www$2;
-    index index.html index.htm;
-    autoindex on;
-  }
-}
-EOF
-
+cp root/nginxconfig /etc/nginx/sites-available/nginxconfig
 run rm /etc/nginx/sites-enabled/*
 try ln -s /etc/nginx/{sites-available,sites-enabled}/nginxconfig
 
