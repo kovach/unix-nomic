@@ -26,6 +26,9 @@ function try() {
 
 header unix-nomic installation
 
+echo This script installs unix-nomic on Ubuntu 14.04
+echo
+
 if [ $(id -u) != "0" ]
 then
     echo This script must be run as root.
@@ -38,7 +41,7 @@ try apt-get --yes --force-yes install \
     build-essential \
     ghc \
     python \
-    python-devel \
+    python-dev \
     python-pip \
     nginx \
     node \
@@ -50,3 +53,10 @@ header Building game software
 header Installing game software
 
 header Cron jobs
+
+
+header skel directory
+
+mkdir /etc/skel/www
+chmod a+r /etc/skel/www
+#cat > /etc/skel/README.txt 
