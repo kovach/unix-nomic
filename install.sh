@@ -88,4 +88,4 @@ header /usr/local/src/core-nomic
 
 [ -d /usr/local/src/nomic ] && try rm -rf /usr/local/src/nomic
 run mkdir -m 755 /usr/local/src/nomic
-try git checkout-index -a -f --prefix=/usr/local/src/nomic/unix-nomic
+try git checkout-index -a -f --prefix=/usr/local/src/nomic/unix-nomic/
