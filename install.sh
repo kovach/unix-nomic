@@ -37,6 +37,8 @@ fi
 
 header Core tools
 try apt-get --yes --force-yes install \
+    passwd \
+    members \
     build-essential \
     ghc \
     python \
