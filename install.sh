@@ -64,9 +64,6 @@ header Cron jobs
 header skel directory
 
 try cp -r skel/* /etc/skel/
-run mkdir /etc/skel/www
-try chmod a+r /etc/skel/www
-
 
 header nginx
 
