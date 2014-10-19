@@ -48,15 +48,39 @@ try apt-get --yes --force-yes install \
     vim \
     emacs \
 
-header Building game software
-
 header Installing game software
+
+try mkdir -m 755 /nomic
+try mkdir -m 755 /nomic/proposals
+
+try cd proposal
+try make install
+try cd ..
 
 header Cron jobs
 
 
 header skel directory
 
-mkdir /etc/skel/www
-chmod a+r /etc/skel/www
-#cat > /etc/skel/README.txt 
+try cp -r skel/* /etc/skel/
+try mkdir /etc/skel/www
+try chmod a+r /etc/skel/www
+
+header nginx
+
+cat > /etc/nginx/sites-available/nginxconfig <<EOF
+server {
+  listen 80;
+  # Serve user www directories
+  location ~ ^/~(.+?)(/.*?)$ {
+    alias /home/$1/www$2;
+    index index.html index.htm;
+    autoindex on;
+  }
+}
+EOF
+
+run rm /etc/nginx/sites-enabled/*
+try ln -s /etc/nginx/{sites-available,sites-enabled}/nginxconfig
+
+service nginx restart
