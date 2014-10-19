@@ -69,7 +69,7 @@ try chmod a+r /etc/skel/www
 
 header nginx
 
-cp root/nginxconfig /etc/nginx/sites-available/nginxconfig
+cp nginx/nginxconfig /etc/nginx/sites-available/nginxconfig
 run rm /etc/nginx/sites-enabled/*
 try ln -s /etc/nginx/{sites-available,sites-enabled}/nginxconfig
 
