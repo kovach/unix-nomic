@@ -1,4 +1,7 @@
 server {
+  location / {
+    root /www;
+  }
   listen 80;
   # Serve user www directories
   location ~ ^/~(.+?)(/.*?)$ {
