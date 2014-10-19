@@ -1,0 +1,4 @@
+#!/bin/sh
+
+printf "\nMaybe there are outstanding proposals.\n"
+

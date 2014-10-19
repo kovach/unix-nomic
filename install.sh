@@ -61,9 +61,16 @@ try cd ..
 header Cron jobs
 
 
+header motd
+
+run rm /etc/update-motd.d/*
+try cp motd/* /etc/update-motd.d/
+
+
 header skel directory
 
 try cp -r skel/* /etc/skel/
+
 
 header nginx
 
@@ -75,3 +82,10 @@ run rm /etc/nginx/sites-enabled/*
 try ln -s /etc/nginx/{sites-available,sites-enabled}/nginxconf
 
 service nginx restart
+
+
+header /usr/local/src/core-nomic
+
+[ -d /usr/local/src/nomic ] && try rm -rf /usr/local/src/nomic
+run mkdir -m 755 /usr/local/src/nomic
+try git checkout-index -a -f --prefix=/usr/local/src/nomic/unix-nomic
